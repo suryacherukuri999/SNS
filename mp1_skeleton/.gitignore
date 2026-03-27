@@ -1,0 +1,25 @@
+# Compiled object files
+*.o
+*.a
+*.so
+
+# Executables
+tsd
+tsc
+
+# Generated protobuf files
+sns.pb.cc
+sns.pb.h
+sns.grpc.pb.cc
+sns.grpc.pb.h
+
+# Runtime data files
+*.txt
+
+# Log files
+*.log
+server-*/
+
+# OS-specific
+.DS_Store
+Thumbs.db
