@@ -388,8 +388,12 @@ void RunServer(std::string port_no) {
   std::unique_ptr<Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
   log(INFO, "Server listening on "+server_address);
+  log(INFO, "Active users: 0. Waiting for connections...");
 
   server->Wait();
+
+  log(INFO, "Server shutting down on "+server_address);
+  std::cout << "Server shutting down." << std::endl;
 }
 
 int main(int argc, char** argv) {
