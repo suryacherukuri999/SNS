@@ -22,7 +22,15 @@ using csce662::Reply;
 using csce662::SNSService;
 
 void sig_ignore(int sig) {
-  std::cout << "Signal caught " + sig;
+  std::cout << "Signal caught " << sig << std::endl;
+}
+
+// Trim leading and trailing whitespace from a string
+std::string trim(const std::string& str) {
+  size_t start = str.find_first_not_of(" \t\r\n");
+  if (start == std::string::npos) return "";
+  size_t end = str.find_last_not_of(" \t\r\n");
+  return str.substr(start, end - start + 1);
 }
 
 Message MakeMessage(const std::string& username, const std::string& msg) {
